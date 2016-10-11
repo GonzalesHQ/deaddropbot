@@ -25,7 +25,7 @@
 var request = require("request");
 var TelegramBot = require('node-telegram-bot-api');
 
-var token = '161729128:AAEFCQzyAbJp65djSw-NpdVoVbcOZg0SEvc';
+var token = '<replace>';
 // Setup polling way
 var bot = new TelegramBot(token, {
   polling: true
@@ -45,18 +45,20 @@ bot.getMe().then(function(me) {
 
 /////////////////////////////////////////////////// VAR - URLS
 
-var onions = ["http://pwoah7foa6au2pul.onion/register.php?aff=41211", //dream - 0
-  "http://outfor6jwcztwbpd.onion/indxx1.php", //outlaw - 1
-  "http://nucleuspf3izq7o6.onion/", //nucleus - 2
-  "http://pushingtabu7itqj.onion"
-]; //gamma - 3
+var onions =
+      ["http://pwoah7foa6au2pul.onion/register.php?aff=41211", //dream - 0
+        "http://outfor6jwcztwbpd.onion/indxx1.php", //outlaw - 1
+        "http://nucleuspf3izq7o6.onion/", //nucleus - 2
+        "http://pushingtabu7itqj.onion"
+      ]; //gamma - 3
 
-var urls = [
-  'https://dnstats.net/api.php?market=Dream+Market',
-  'https://dnstats.net/api.php?market=Outlaw+Market',
-  'https://dnstats.net/api.php?market=Nucleus+Market',
-  'https://dnstats.net/api.php?market=Gammagoblin+Pushing+Taboo',
-];
+var urls =
+       [
+        'https://dnstats.net/api.php?market=Dream+Market',
+        'https://dnstats.net/api.php?market=Outlaw+Market',
+        'https://dnstats.net/api.php?market=Nucleus+Market',
+        'https://dnstats.net/api.php?market=Gammagoblin+Pushing+Taboo',
+      ];
 
 
 
