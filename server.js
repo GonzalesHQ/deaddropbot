@@ -17,19 +17,19 @@
 // // deaddropbot should greet you in the terminal upon successfull launch
 // // connect to him with https://telegram.me/deaddropbot
 
-
-
-// var http = require('http');
-// var https = require('https');
-// var async = require('async');
 var request = require("request");
 var TelegramBot = require('node-telegram-bot-api');
 
-var token = '<replace>';
-// Setup polling way
-var bot = new TelegramBot(token, {
-  polling: true
-});
+// See https://developers.openshift.com/en/node-js-environment-variables.html
+var port = process.env.OPENSHIFT_NODEJS_PORT;
+var host = process.env.OPENSHIFT_NODEJS_IP;
+var domain = process.env.OPENSHIFT_APP_DNS;
+var token = '161729128:AAEFCQzyAbJp65djSw-NpdVoVbcOZg0SEvc';
+
+var bot = new TelegramBot(token, {webHook: {port: port, host: host}, });
+// OpenShift enroutes :443 request to OPENSHIFT_NODEJS_PORT
+bot.setWebHook(domain+':443/bot'+token);
+
 
 /////////////////////////////////////////////////// Greeting
 
